@@ -23,64 +23,94 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
-        Button1 = New Button()
-        Button2 = New Button()
-        Button3 = New Button()
+        countBtn = New Button()
         Timer1 = New Timer(components)
+        timerLbl = New Label()
+        MenuStrip1 = New MenuStrip()
+        FileToolStripMenuItem = New ToolStripMenuItem()
+        ResetToolStripMenuItem = New ToolStripMenuItem()
+        ExitToolStripMenuItem = New ToolStripMenuItem()
+        MenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
-        ' Button1
+        ' countBtn
         ' 
-        Button1.Font = New Font("Impact", 36F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button1.Location = New Point(12, 12)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(226, 69)
-        Button1.TabIndex = 0
-        Button1.Text = "0"
-        Button1.UseVisualStyleBackColor = True
-        ' 
-        ' Button2
-        ' 
-        Button2.Font = New Font("Impact", 36F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button2.Location = New Point(12, 87)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(226, 69)
-        Button2.TabIndex = 1
-        Button2.Text = "5"
-        Button2.UseVisualStyleBackColor = True
-        ' 
-        ' Button3
-        ' 
-        Button3.Font = New Font("Impact", 36F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button3.Location = New Point(12, 162)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(226, 69)
-        Button3.TabIndex = 2
-        Button3.Text = "Reset"
-        Button3.UseVisualStyleBackColor = True
+        countBtn.Font = New Font("Impact", 36F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        countBtn.Location = New Point(12, 41)
+        countBtn.Name = "countBtn"
+        countBtn.Size = New Size(226, 69)
+        countBtn.TabIndex = 0
+        countBtn.Text = "0"
+        countBtn.UseVisualStyleBackColor = True
         ' 
         ' Timer1
         ' 
         Timer1.Interval = 1000
+        ' 
+        ' timerLbl
+        ' 
+        timerLbl.Font = New Font("Impact", 36F, FontStyle.Bold)
+        timerLbl.Location = New Point(15, 113)
+        timerLbl.Name = "timerLbl"
+        timerLbl.Size = New Size(223, 66)
+        timerLbl.TabIndex = 3
+        timerLbl.Text = "5"
+        timerLbl.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' MenuStrip1
+        ' 
+        MenuStrip1.Items.AddRange(New ToolStripItem() {FileToolStripMenuItem})
+        MenuStrip1.Location = New Point(0, 0)
+        MenuStrip1.Name = "MenuStrip1"
+        MenuStrip1.Size = New Size(247, 24)
+        MenuStrip1.TabIndex = 4
+        MenuStrip1.Text = "MenuStrip1"
+        ' 
+        ' FileToolStripMenuItem
+        ' 
+        FileToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ResetToolStripMenuItem, ExitToolStripMenuItem})
+        FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        FileToolStripMenuItem.Size = New Size(37, 20)
+        FileToolStripMenuItem.Text = "File"
+        ' 
+        ' ResetToolStripMenuItem
+        ' 
+        ResetToolStripMenuItem.Name = "ResetToolStripMenuItem"
+        ResetToolStripMenuItem.ShortcutKeys = Keys.F5
+        ResetToolStripMenuItem.Size = New Size(121, 22)
+        ResetToolStripMenuItem.Text = "Reset"
+        ' 
+        ' ExitToolStripMenuItem
+        ' 
+        ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        ExitToolStripMenuItem.Size = New Size(121, 22)
+        ExitToolStripMenuItem.Text = "Exit"
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
-        ClientSize = New Size(247, 239)
-        Controls.Add(Button3)
-        Controls.Add(Button2)
-        Controls.Add(Button1)
+        ClientSize = New Size(247, 195)
+        Controls.Add(timerLbl)
+        Controls.Add(countBtn)
+        Controls.Add(MenuStrip1)
+        MainMenuStrip = MenuStrip1
         Name = "Form1"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Click me"
+        MenuStrip1.ResumeLayout(False)
+        MenuStrip1.PerformLayout()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents countBtn As Button
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents timerLbl As Label
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ResetToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
 
 End Class
